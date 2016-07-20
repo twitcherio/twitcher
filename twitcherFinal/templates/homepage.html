@@ -1,0 +1,107 @@
+<!doctype HTML>
+
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Custom stylesheet -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Droid Sans Font -->
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+	<title>Twitcher.io</title>
+<script>
+    function getURL(){
+        var checked = document.querySelector('[name="filter"]:checked').value;
+        var handle = document.getElementById('handle').value;
+        location.href = handle+'/'+checked;
+    }
+</script>
+
+</head>
+
+
+
+<body background="{{ url_for('static', filename = 'purpleroad.jpg') }}">
+
+<div id="top">
+<img src="{{ url_for('static', filename = 'smallestLogo.png') }}" alt="Twitcher">
+<!--
+<h6>Comprehensive Twitter Searches for Employers</h6> -->
+</div>
+
+
+
+
+<div id="forms">
+<form>
+
+  	Twitter Username:<br>
+  	<input type="text" id="handle" placeholder="@twitter_user" aria-describedby="basic-addon1">
+
+</form>
+
+    <div class="container">
+<form role="form">
+
+	Search Filter:<br>
+    <label class="radio-inline">
+    	<input type="radio" name="filter" value="profanity" checked="checked"> Profanity
+	</label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="drugs"> Drugs
+  	</label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="alcohol"> Alcohol
+  	</label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="politics"> Politics
+  	</label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="school"> School
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="nice things"> Positivity
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="coding"> Coding
+    </label>
+    <label class="radio-inline">
+        <input type="radio" name="filter" value="employment"> Employment
+    </label>
+  	<br>
+</form>
+    </div>
+
+    <div id="submit">
+        <a class="btn btn-large btn-default" href="#" onclick="getURL()">Parse</a>
+
+    </div>
+
+
+
+</div>
+
+</body>
+
+<footer>
+  <p>Created by:</p>
+  <p><a href="http://lillianchow.github.io">Lillian Chow</a> and
+  <a href="http://github.com/meganwolf">Megan Wolf</a></p>
+</footer>
+</html>

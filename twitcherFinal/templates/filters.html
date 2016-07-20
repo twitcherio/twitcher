@@ -1,0 +1,60 @@
+<!doctype HTML>
+
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Custom stylesheet -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Droid Sans Font -->
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+	<title>Twitcher.io</title>
+
+</head>
+
+
+
+<body background="{{ url_for('static', filename = 'purpleroadtile.png') }}">
+
+<div id="top">
+<img src="{{ url_for('static', filename = 'smallestLogo.png') }}" alt="Twitcher">
+<!--
+<h6>Comprehensive Twitter Searches for Employers</h6> -->
+</div>
+
+<p>{{ handle }} has been flagged {{ count }} time(s) for {{ filter }}</p></br>
+
+
+{% for tweet in tweets %}
+<p>
+    <b>{{ tweet[0] + ' -- ' }}</b>
+
+    <b>{{ tweet[1] }}</b><br>
+</p>
+
+{% endfor %}
+
+
+</body>
+
+<footer>
+  <p>Created by:</p>
+  <p><a href="http://lillianchow.github.io">Lillian Chow</a> and
+  <a href="http://github.com/meganwolf">Megan Wolf</a></p>
+</footer>
+</html>
